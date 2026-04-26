@@ -1,0 +1,13 @@
+# Review files
+*_REVIEW*.md
+*_REVIEW*.py
+
+# Python
+__pycache__/
+*.pyc
+
+# Excel
+*.xlsx
+
+# Claude Code
+.claude/
