@@ -6,12 +6,12 @@ Python-based seismic moment connection design verification tools based on **AISC
 
 This project provides complete design verification programs for four types of prequalified seismic moment connections, implementing the step-by-step design procedures from AISC 358-16:
 
-| Connection | Chapter | Script | Steps |
-|------------|---------|--------|-------|
-| RBS (Reduced Beam Section) | Ch. 5 | `rbs_design.py` | 11 |
-| End-Plate (Extended) | Ch. 6 | `endplate_design.py` | 13 |
-| BFP (Bolted Flange Plate) | Ch. 7 | `bfp_design.py` | 17 |
-| WUF-W (Welded Unreinforced Flange) | Ch. 8 | `wufw_design.py` | 8 |
+| Connection                         | Chapter | Script               | Steps |
+| ---------------------------------- | ------- | -------------------- | ----- |
+| RBS (Reduced Beam Section)         | Ch. 5   | `rbs_design.py`      | 11    |
+| End-Plate (Extended)               | Ch. 6   | `endplate_design.py` | 13    |
+| BFP (Bolted Flange Plate)          | Ch. 7   | `bfp_design.py`      | 17    |
+| WUF-W (Welded Unreinforced Flange) | Ch. 8   | `wufw_design.py`     | 8     |
 
 Each program performs all required checks including probable moment, shear, strong-column/weak-beam, continuity plates, panel zone, and connection detailing.
 
@@ -95,29 +95,32 @@ Key parameters: **C_pr = 1.4** (not Eq. 2.4-2), **S_h = 0** (hinge at column fac
 
 All programs require:
 
-| Parameter | Description | Example |
-|-----------|-------------|---------|
-| `--beam-section` | Beam W-shape designation | `W24x68` |
-| `--column-section` | Column W-shape designation | `W14x311` |
-| `--span` | Beam span, center-to-center (in) | `360` |
-| `--system-type` | Frame system (`SMF` or `IMF`) | `SMF` |
+| Parameter          | Description                      | Example   |
+| ------------------ | -------------------------------- | --------- |
+| `--beam-section`   | Beam W-shape designation         | `W24x68`  |
+| `--column-section` | Column W-shape designation       | `W14x311` |
+| `--span`           | Beam span, center-to-center (in) | `360`     |
+| `--system-type`    | Frame system (`SMF` or `IMF`)    | `SMF`     |
 
 End-plate additionally requires `--connection-type` (4E, 4ES, or 8ES).
 
 ## Optional Parameters
 
 ### Material Properties
+
 - `--beam-Fy` / `--column-Fy`: Yield stress (default: 50 ksi for A992)
 - `--beam-Fu` / `--column-Fu`: Tensile strength (default: 65 ksi)
 - `--beam-Ry` / `--column-Ry`: Overstrength factor (default: 1.1)
 
 ### Gravity Loads
+
 - `--load-D`: Dead load (kips, total on span)
 - `--load-L`: Live load (kips)
 - `--load-S`: Snow load (kips)
 - `--Vu`: Required shear strength (kips)
 
 ### Connection-Specific
+
 - End-plate: `--bolt-diameter`, `--bolt-grade`, `--plate-thickness`, `--plate-width`
 - BFP: `--plate-Fy`, `--plate-Fu` (flange plate material)
 

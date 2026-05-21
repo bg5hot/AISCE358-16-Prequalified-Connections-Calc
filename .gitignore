@@ -1,6 +1,7 @@
 # Review files
 *_REVIEW*.md
 *_REVIEW*.py
+*_review*.md
 
 # Python
 __pycache__/
@@ -11,3 +12,5 @@ __pycache__/
 
 # Claude Code
 .claude/
+
+AISC-358-16.md
